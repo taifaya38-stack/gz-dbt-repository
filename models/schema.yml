@@ -9,18 +9,27 @@
        - name: product
          identifier: raw_gz_product
          description: Products of Greenweez 
+  
          columns:
           - name: products_id
             description: identifier of each of Greeweez's product 
             tests:
                - unique
-               - not Null              
+               - not_null              
           - name: purchase_price
             description: price of the purchase of each of Greeweez's products
 
        - name: sales
          identifier: raw_gz_sales
          description: Sales of Greenweez 
+
+         # Freshness testing - make sure to fill in the ...
+         loaded_at_field: "CAST(date_date AS TIMESTAMP)"
+         freshness:
+           warn_after: 
+              count : 1
+              period: minute
+              
          columns:
           - name: date_date
             description: date of purchase 
@@ -40,7 +49,7 @@
             description: identifier of orders
             tests:
                - unique
-               - not Null
+               - not_null
           - name: shipping_fee
             description: the fee of the shipping services
           - name: logcost
