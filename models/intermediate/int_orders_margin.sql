@@ -1,2 +1,6 @@
- select* from {{ ref('int_sales_margin') }}  as margin
-    on sales.product_id=margin.orders_id
+ select sales.orders_id,
+        *
+    from {{ ref('int_sales_margin') }} as margin
+    inner join {{ ref('stg_raw__sales') }}  as sales
+   using (date_date)
+
