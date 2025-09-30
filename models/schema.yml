@@ -56,3 +56,66 @@
             description: the cost of the logistic means
           - name: ship_cost
             description: the cost of the shipping services
+
+       - name: adwords
+         identifier : raw_gz_adwords
+         description: adwords ads
+         columns:
+           - name: campaign_key
+             description: primarykey
+          
+             tests :
+             - unique
+             - not_null
+       - name: bing
+         identifier : raw_gz_bing
+         description: bing ads
+         columns:
+           - name: campaign_key
+             description: primarykey
+             tests :
+             - unique
+             - not_null
+       - name: criteo
+         identifier : raw_gz_criteo
+         description: criteo ads
+         columns:
+           - name: campaign_key
+             description: primarykey
+             tests :
+             - unique
+             - not_null
+       - name: facebook
+         identifier : raw_gz_facebook
+         description: facebook ads
+         columns:
+           - name: campaign_key
+             description: primarykey
+             tests :
+             - unique
+             - not_null
+       - name: campaigns
+         identifier : int_campaigns 
+         description: campaigns that are imtegrated in our ads
+         columns:
+           - name: campaign_key
+             description: primarykey
+             tests :
+             - unique
+             - not_null
+       - name: _day
+         identifier : int_campaigns_day
+         description: campaign's day that are imtegrated in our ads
+         columns:
+           - name: date_date
+             description: primarykey
+             tests :
+             - unique
+             - not_null
+           - name: campaign_name
+             description: primarykey
+             tests :
+             - unique
+             - not_null
+       
+       
