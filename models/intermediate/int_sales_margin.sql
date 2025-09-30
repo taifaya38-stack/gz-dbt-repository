@@ -1,4 +1,5 @@
- select date_date,
+ select 
+        date_date,
         revenue,
         quantity,
         round(revenue-(quantity * purchase_price),2) as margin,
